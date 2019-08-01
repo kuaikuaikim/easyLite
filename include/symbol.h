@@ -2,11 +2,11 @@
 // Created by asy on 10/20/18.
 //
 
-#ifndef DFACEDB_SYMBOL_H
-#define DFACEDB_SYMBOL_H
+#ifndef EASYLITE_SYMBOL_H
+#define EASYLITE_SYMBOL_H
 
 #include "./easylite.h"
-#include "./exception/dface_db_exceptio.h"
+#include "./exception/easylite_exceptio.h"
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -30,11 +30,11 @@ inline EasyLite* load_easylite(){
 #ifdef _WIN32
     if (db_handle == NULL)
     {
-        throw "libdfacedb.dll library failed to load";
+        throw "libeasylite.dll library failed to load";
     }
     //获得人脸检测工厂函数
     CreateEasyLite* createEasyLite = (CreateEasyLite*)GetProcAddress(db_handle, "create_easylite");
-    if (createDfaceDB == NULL) {
+    if (createEasyLite == NULL) {
 		throw "EasyLite failed to create";
     }
 #else
@@ -61,14 +61,14 @@ inline void destory_easylite(EasyLite* p){
     //获得人脸检测通道工厂销毁函数
     DestroyEasyLite* destroyEasyLite = (DestroyEasyLite*)GetProcAddress(db_handle, "destroy_easylite");
     if (destroyDfaceDB == NULL) {
-        throw "DfaceDB failed to destory";
+        throw "EasyLite failed to destory";
     }
 #else
     //获得人脸检测通道工厂销毁函数
     DestroyEasyLite* destroyEasyLite = (DestroyEasyLite*)dlsym(db_handle, "destroy_easylite");
     const char* dlsym_error = dlerror();
     if (dlsym_error) {
-        throw "DfaceDB failed to destory";
+        throw "EasyLite failed to destory";
     }
 #endif
     //销毁检测通道
@@ -77,4 +77,4 @@ inline void destory_easylite(EasyLite* p){
 
 
 
-#endif //DFACEDB_SYMBOL_H
+#endif //EasyLite_SYMBOL_H

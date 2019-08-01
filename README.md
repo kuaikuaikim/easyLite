@@ -16,9 +16,11 @@ make install
 c++ wrapper api:  
 
 ```c++
+    //set environment variables
+    export LD_LIBRARY_PATH=/libeasylite.so path/
+
+
     #include "easylite_api.h"
-
-
     EasyLite* easydb = load_easylite();
     easydb->openDB("easy.db");
 
