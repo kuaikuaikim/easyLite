@@ -32,7 +32,7 @@ c++ wrapper api:
     int last_id_2 = fdb->insert(collection_name, jstr);
 
     std::string out_str;
-    int cou = fdb->fetchById(collection_name, last_id_2, out_str);
+    int count = fdb->fetchById(collection_name, last_id_2, out_str);
 ```
 
 java wrapper api:  
