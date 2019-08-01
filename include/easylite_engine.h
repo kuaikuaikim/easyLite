@@ -1,9 +1,9 @@
 //
-// Created by asy on 11/24/18.
+// Created by kkkim on 11/24/18.
 //
 
-#ifndef DFACEDB_FACEDB_H
-#define DFACEDB_FACEDB_H
+#ifndef EASYLITE_FACEDB_H
+#define EASYLITE_FACEDB_H
 
 #include <string>
 #include <vector>
@@ -57,4 +57,4 @@ private:
 
 
 
-#endif //DFACEDB_FACEDB_H
+#endif //EASYLITE_FACEDB_H
