@@ -147,16 +147,6 @@ static int JsonObjectWalkerArray(unqlite_value *pKey,unqlite_value *pData,void *
 
 
 EasyLiteEngine::EasyLiteEngine() {
-//#ifdef BIT_ANSWER
-//    if(!authCheck()){
-//        throw new EasyLiteException("Device Not Authed", EASYLITE_ERR_DEVICE_UNAUTH);
-//    }
-//    BIT_FEATURE_INFO feature_info;
-//
-//    if(!featureCheck(FEATURE_ID_DETECT, &feature_info)){
-//        throw new EasyLiteException("Detect Face Feature Not Authed", EASYLITE_ERR_FEATURE_UNAUTH);
-//    }
-//#endif
 
 }
 
@@ -165,17 +155,6 @@ EasyLiteEngine::~EasyLiteEngine() {
 }
 
 bool EasyLiteEngine::openDB(const std::string &db_file) {
-//#ifdef BIT_ANSWER
-//    if(!authCheck()){
-//        throw new EasyLiteException("Device Not Authed", EASYLITE_ERR_DEVICE_UNAUTH);
-//    }
-//    BIT_FEATURE_INFO feature_info;
-//
-//    if(!featureCheck(FEATURE_ID_DETECT, &feature_info)){
-//        throw new EasyLiteException("Detect Face Feature Not Authed", EASYLITE_ERR_FEATURE_UNAUTH);
-//    }
-//#endif
-
 	//rc = unqlite_open(&pDb,"dface.db",UNQLITE_OPEN_CREATE);
 	int rc;
 	rc = unqlite_open(&pDb, db_file.c_str(), UNQLITE_OPEN_CREATE);
