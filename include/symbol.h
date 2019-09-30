@@ -32,7 +32,7 @@ inline EasyLite* load_easylite(){
     {
         throw "libeasylite.dll library failed to load";
     }
-    //获得人脸检测工厂函数
+    //获得数据库工厂函数
     CreateEasyLite* createEasyLite = (CreateEasyLite*)GetProcAddress(db_handle, "create_easylite");
     if (createEasyLite == NULL) {
 		throw "EasyLite failed to create";
@@ -42,7 +42,7 @@ inline EasyLite* load_easylite(){
     {
         throw "libeasylite.so library failed to load";
     }
-    //获得人脸检测工厂函数
+    //获得数据库工厂函数
     CreateEasyLite* createEasyLite = (CreateEasyLite*)dlsym(db_handle, "create_easylite");
     const char* dlsym_error = dlerror();
     if (dlsym_error) {
@@ -58,20 +58,20 @@ inline EasyLite* load_easylite(){
 */
 inline void destory_easylite(EasyLite* p){
 #ifdef _WIN32
-    //获得人脸检测通道工厂销毁函数
+    //获得数据库通道工厂销毁函数
     DestroyEasyLite* destroyEasyLite = (DestroyEasyLite*)GetProcAddress(db_handle, "destroy_easylite");
     if (destroyDfaceDB == NULL) {
         throw "EasyLite failed to destory";
     }
 #else
-    //获得人脸检测通道工厂销毁函数
+    //获得数据库通道工厂销毁函数
     DestroyEasyLite* destroyEasyLite = (DestroyEasyLite*)dlsym(db_handle, "destroy_easylite");
     const char* dlsym_error = dlerror();
     if (dlsym_error) {
         throw "EasyLite failed to destory";
     }
 #endif
-    //销毁检测通道
+    //销毁数据库通道
     destroyEasyLite(p);
 }
 
