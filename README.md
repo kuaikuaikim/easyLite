@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/symisc/unqlite.svg?branch=master)](https://github.com/kuaikuaikim) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/kuaikuaikim) [![GitHub license](https://img.shields.io/pypi/l/Django.svg)](https://github.com/kuaikuaikim) 
 
 
-**EasyLite** is an open source embedded nosql database based on unqlite. We wrapper couples of easy CURD API for reading/writting a single file only nosql databse. EasyLite dont need any dependent library, it can run any devices easyly.
+**EasyLite** is an open source embedded nosql database based on unqlite. We wrapper couples of easy CURD API for reading/writting a single file only nosql databse. EasyLite dont need any dependent library, it can run any devices easily.
 
 ## Installation
 ```shell
